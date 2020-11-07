@@ -1,1 +1,1 @@
-# HackHolyoke_Project
+# HackHolyoke Project
