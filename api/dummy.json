@@ -1,0 +1,55 @@
+{
+   "trees": [
+      {
+         "id": "t001",
+         "name": "Moringa oleifera",
+         "otherNames": "Moringa, Muringa, ben-oil tree, cabbage tree, clarifier tree, drumstick tree, horse-radish tree, Ben ailé, Neverdie, Pois quenique",
+         "details": {
+            "height": "8 - 10 m"
+         },
+         "uses": [
+            "Human nutrition",
+            "Alimentation oil",
+            "Beekeeping",
+            "Cosmetic",
+            "Modern medicine",
+            "Traditional medicine"
+         ],
+         "lifeTimeCO2Offset": "706",
+         "yearlyCO2Offset": "15.5",
+         "CO2OffsetPeriod": "0 - 10 years",
+         "productivePeriod": "1 year - 20 years",
+         "naturalLifeSpan": "25 years",
+         "benefits": "We have only recently diversified into this species but the more we learn about it, the better we like it. Moringa has so many uses that there isnt space here to go into them but in outline... You can eat the leaves, the roots and the seeds; you can sell the seed oil for cooking with or for making cosmetics; the bark is good for all kinds of medicines; the seed pods can purify dirty water; it will stop your soil eroding away; it will survive extreme drought; it will give you shade when it is mature; it will grow easily from a cutting; once it has finished growing you can burn its wood to cook with and you can even refine the seeds into biofuel to run your car on! What other tree can compare with this?",
+         "img": "https://tree-nation.com/thumbs/473x300/https://treenation-uploads.s3-accelerate.amazonaws.com/specie-577135cbde3db.jpg",
+         "nativeTo": "Indian Subcontinent",
+         "available": 1000,
+         "price": 4
+      }
+   ],
+   "users": [
+      {
+         "id": "u001",
+         "firstName": "John",
+         "lastName": "Doe",
+         "email": "john@doe.com",
+         "phone": "01234567891",
+         "username": "johndoe",
+         "password": "password",
+         "dateOfBirth": "January 1st, 1998",
+         "payment": "VISA",
+         "creditCard": "154948562459851",
+         "ccv": "234",
+         "expires": "01 / 24",
+         "address": {
+            "street": "104",
+            "apt": "Apt 1",
+            "city": "San Andreas",
+            "state": "Lost Santos",
+            "Country": "United States",
+            "postcode": "25000"
+         },
+         "cart": []
+      }
+   ]
+}
