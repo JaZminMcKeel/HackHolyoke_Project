@@ -1,6 +1,8 @@
 const Express = require("express");
 const MongoClient = require("mongodb").MongoClient;
 
+const makeOrderRoute = require("./makeOrder");
+
 const router = Express.Router();
 
 const userName = process.env.USER_NAME;
@@ -48,6 +50,8 @@ module.exports = () => {
             return res.status(500);
          });
    });
+
+   router.use("/makeOrder", makeOrderRoute()); // all calls for makeOrder will be routed to this page
 
    return router;
 };
