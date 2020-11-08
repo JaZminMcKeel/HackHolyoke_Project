@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Control Carbon</title>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+
+      <!-- Bootstrap CSS -->
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+         crossorigin="anonymous"
+      />
+      <script
+         src="https://kit.fontawesome.com/4c54dce192.js"
+         crossorigin="anonymous"
+      ></script>
+   </head>
+   <body>
+      <div id="app">
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-toggle="collapse"
+               data-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent"
+               aria-expanded="false"
+               aria-label="Toggle navigation"
+            >
+               <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                     <a class="nav-link" href="#"
+                        ><img
+                           src="./assets/icons/home.svg"
+                           alt="Home"
+                           height="48"
+                        />
+                        <span class="sr-only">(current)</span></a
+                     >
+                  </li>
+               </ul>
+               <center>
+                  <font size="5">Save the World, Control the Carbon</font>
+               </center>
+               <ul
+                  class="form-inline my-2 my-lg-0 navbar-nav ml-auto sticky-top"
+               >
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"
+                        ><img
+                           src="./assets/icons/cart.svg"
+                           alt="Home"
+                           height="24"
+                        /><sup v-if="user" class="badge badge-pill badge-info"
+                           >{{user.cart.length}}</sup
+                        ></a
+                     >
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"
+                        ><img
+                           src="./assets/icons/user.svg"
+                           alt="Home"
+                           height="24"
+                     /></a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"
+                        ><img
+                           src="./assets/icons/signout.svg"
+                           alt="Home"
+                           height="24"
+                     /></a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+         <div class="container">
+            <center>
+               <div class="row">
+                  <div v-for="tree in trees">
+                     <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card my-2" style="width: 18rem">
+                           <img
+                              v-bind:src="tree.img"
+                              class="card-img-top"
+                              v-bind:alt="tree.name"
+                           />
+                           <div class="card-body">
+                              <h5 class="card-title">{{tree.name}}</h5>
+                              <p class="card-text">
+                                 {{tree.benefits.substring(0, 100)}}
+                              </p>
+                              <span class="float-left">${{tree.price}}</span>
+                              <button
+                                 class="btn btn-success float-right text-monospace"
+                                 v-on:click="addTreeToCart(tree)"
+                              >
+                                 ADD TO CART
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </center>
+         </div>
+      </div>
+      <footer class="container mb-3 mt-5">
+         <div class="row">
+            <div class="col-4">
+               <img src="./assets/icons/cloud.svg" height="48" />
+               <br /><br />
+               <p>
+                  This website was designed for HackHolyoke by Umair Jibran &
+                  Ja'Zmin McKeel. The focus of this website is for users to know
+                  how much can they contribute towards control of carbon dioxide
+                  emission.
+               </p>
+               <br /><br /><br />
+            </div>
+            <div class="col-4">
+               <h5>Quick Links</h5>
+               <br /><br />
+               <ul style="list-style-type: none">
+                  <li class="text-decoration-none"><a href="#"> About</a></li>
+                  <br />
+                  <li class="text-decoration-none">
+                     <a href="#"> Our Story</a>
+                  </li>
+                  <br />
+                  <li class="text-decoration-none"><a href="#"> Team</a></li>
+               </ul>
+            </div>
+            <div class="col-4">
+               <h5>Follow Us</h5>
+               <br />
+               <ul style="list-style-type: none">
+                  <li>
+                     <a
+                        class="text-black text-reset text-decoration-none"
+                        href="#"
+                        ><i class="fa fa-facebook"></i> Facebook</a
+                     >
+                  </li>
+                  <br />
+                  <li>
+                     <a
+                        class="text-black text-reset text-decoration-none"
+                        href="#"
+                        ><i class="fa fa-twitter"></i> Twitter</a
+                     >
+                  </li>
+                  <br />
+                  <li>
+                     <a
+                        class="text-black text-reset text-decoration-none"
+                        href="#"
+                        ><i class="fa fa-instagram"></i> Instagram</a
+                     >
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="float-left">
+            Copyright &copy; 2020, Control Carbon. All Rights Reserved.
+         </div>
+         <div class="float-right">
+            <a href="#">Terms & Condition</a>
+            &emsp;
+            <a href="#">Privacy Policy</a>
+         </div>
+      </footer>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script
+         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+         crossorigin="anonymous"
+      ></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+         crossorigin="anonymous"
+      ></script>
+      <script
+         src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+         crossorigin="anonymous"
+      ></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <script>
+         const app = new Vue({
+            el: "#app",
+            data: {
+               trees: null,
+               user: null,
+            },
+            methods: {
+               addTreeToCart: function (tree) {
+                  this.user.cart.push(tree);
+               },
+            },
+            mounted: function () {
+               fetch("http://localhost:3000/trees/")
+                  .then(res => res.json())
+                  .then(data => (this.trees = data));
+               fetch(
+                  "http://localhost:3000/users/user/7e2f745d2b024a3489b8bba4433c04eb"
+               )
+                  .then(res => res.json())
+                  .then(data => (this.user = data));
+            },
+         });
+      </script>
+   </body>
+</html>
