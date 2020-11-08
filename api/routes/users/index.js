@@ -30,7 +30,7 @@ module.exports = () => {
          });
    });
 
-   router.get("/:id", (req, res) => {
+   router.get("/user/:id", (req, res) => {
       // this route is used to fetch single user
       const userId = req.params.id;
       mongoClient
